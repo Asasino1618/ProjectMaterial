@@ -28,7 +28,8 @@ parser.add_argument('--data-rewrite', default=0, type=int,
 parser.add_argument('--train-ratio', default=0.6, type=float)
 parser.add_argument('--epochs', default=200, type=int, metavar='N',
                     help='number of total epochs to run (default: 250)')
-parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
+parser.add_argument('--start-epoch',
+                     default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
 parser.add_argument('-b', '--batch-size', default=256, type=int,
                     metavar='N', help='mini-batch size (default: 256)')
@@ -92,7 +93,7 @@ def main():
     
     # Check if the data has been prepared
     if (not os.path.exists(os.path.join(path_save, 'rotation', '1.pt'))) or bool(args.data_rewrite):
-        data_prepare(path_save)
+        data_prepare(path_save, f'./data/perov5/')
     
     date = datetime.now()
     date_str = date.strftime('%Y%m%d%H%M%S%f')

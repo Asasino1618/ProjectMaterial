@@ -83,5 +83,7 @@ def main():
             data = Data(x=sampled_seq[i], cif_id=[f'sample_{target_denorm:.2f}_{i+1}'], prop=torch.tensor([target_denorm]))
             torch.save(data, os.path.join(sampled_path, f'sample-{target_denorm:.2f}-{i+1}.pt'))
 
+    #val loss：
+    
 if __name__ == '__main__':
     main()

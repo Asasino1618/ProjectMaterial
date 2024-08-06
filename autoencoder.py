@@ -151,7 +151,7 @@ def autoencoder(data, model, encode=True, decode=True):
 # Returns a ase.Atoms object for cif file writing
 @torch.no_grad()
 def postprocess(model_rot, model_trans, data, loop=5):
-    cif_id=data.cif_id.item()
+    cif_id=data.cif_id
     formula = data.elements.numpy()
     prop = data.y
     coords = distances2coords(data.distances)

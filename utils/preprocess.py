@@ -82,4 +82,4 @@ def load_data(file_path):
     return torch.load(file_path).cpu().x.squeeze()
 
 def load_prop(file_path):
-    return torch.load(file_path).cpu().prop.squeeze()
+    return torch.load(file_path).cpu().y.squeeze()
